@@ -1,0 +1,282 @@
+/********** Colour reference chart*********
+*************************** colour *******/
+:root {
+  --blue: rgb(78, 125, 155);
+  --light-blue: rgb(108, 167, 204);
+  --grey: rgb(161, 164, 167);
+  --green: rgb(79, 173, 67);
+  --title: rgb(195, 110, 41);
+}
+
+/* setting body background */
+html,
+body,
+.root {
+  color: black;
+  background: rgb(235, 235, 235);
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: "Muli", sans-serif;
+}
+.header,
+.main,
+.footer,
+.root {
+  width: 1080px;
+  margin: 0 auto;
+}
+
+/* styling the header */
+.header {
+  background-color: var(--blue);
+  flex: 0 1 auto;
+  width: 100%;
+}
+.banner {
+  color: white;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.name {
+  margin: 5px;
+  padding: 2px;
+  color: white;
+}
+.menu {
+  margin: 0 20px;
+}
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.menu li {
+  float: left;
+  width: 130px;
+}
+.menu li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 5px 16px;
+  text-decoration: none;
+  background-color: var(--light-blue);
+}
+.menu li a:hover:not(.active) {
+  background-color: var(--green);
+}
+.menu .active {
+  background-color: var(--green);
+}
+/* styling the main */
+.main {
+  flex: 1 1 auto;
+  background-color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container{
+  flex: 1 1 auto;
+}
+
+.main-body {
+  padding: 10px;
+  margin: 0;
+  width: 650px;
+}
+.title {
+  text-align: center;
+  background-color: var(--title);
+}
+
+/* social media div */
+.details .copyright-social-media {
+  padding: 10px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center; /* For horizontal alignment */
+  align-items: center; /* For vertical alignment */
+}
+.details a {
+  font-size: 50px;
+  color: var(--blue);
+}
+.details a {
+  padding-left: 10px;
+  text-decoration: none;
+}
+.details a:hover {
+  color: var(--green);
+}
+
+/* styling the footer */
+.footer {
+  flex: 0 1 auto;
+  width: 100%;
+}
+
+/* setting footer styles */
+.footer .copyright-social-media {
+  margin: 0 auto;
+  height: 40px;
+  background-color: rgb(78, 125, 155);
+  display: flex;
+  justify-content: center; /* For horizontal alignment */
+  align-items: center; /* For vertical alignment */
+}
+
+/* social media div */
+.footer,
+.footer .copyright-social-media a {
+  font-size: 20px;
+  color: white;
+}
+.footer .copyright-social-media a {
+  padding-left: 10px;
+  text-decoration: none;
+}
+.footer .copyright-social-media a:hover {
+  color: var(--green);
+}
+/* media query for 768 and smaller screens */
+/* reducing margins */
+@media (max-width: 768px) {
+  .header .name h1 {
+    margin: 2px;
+  }
+  .logo img {
+    width: 150px;
+    height: 35px;
+  }
+  .portfolio-container {
+    padding: 10px;
+    margin: 0;
+    width: 650px;
+  }
+  .portfolio {
+    margin: 0px;
+    padding: 0px;
+    width: 650px;
+  }
+  /* social media div */
+  .footer,
+  .footer .copyright-social-media a {
+    font-size: 15px;
+    color: white;
+  }
+  .hobby-image {
+    width: 300px;
+  }
+
+  .hobby-image img {
+    width: 290px;
+    height: 290px;
+  }
+}
+
+/* media query for 400 and smaller screens */
+/* Removing margin and setting width to full screen */
+@media (max-width: 650px) {
+  html,
+  body {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+  }
+  .main-body,
+  .portfolio-container {
+    width: 95%;
+  }
+  .portfolio {
+    width: 100%;
+  }
+  .zoom img {
+    width: 300px;
+  }
+  .zoom:hover {
+    transform: none;
+  }
+  .header .name h1 {
+    margin: 2px;
+    font-size: 1.3rem;
+  }
+  .logo img {
+    display: none;
+  }
+  .title h2 {
+    font-size: 1rem;
+  }
+  .menu li {
+    font-size: 0.7rem;
+    float: left;
+    width: 90px;
+    height: 21px;
+  }
+  .portfolio-container {
+    padding: 10px;
+    margin: 0;
+  }
+  .portfolio {
+    margin: 0px;
+    padding: 0px;
+  }
+  /* social media div */
+  .footer,
+  .footer .copyright-social-media a {
+    font-size: 15px;
+    color: white;
+  }
+  .hobby-image {
+    width: 300px;
+  }
+
+  .hobby-image img {
+    width: 290px;
+    height: 290px;
+  }
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: var(--green);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--green) transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
