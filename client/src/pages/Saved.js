@@ -4,7 +4,7 @@ import API from "../utils/API";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import Thumbnail from "../components/Thumbnail";
-import { DeleteBtn } from "../components/Buttons";
+import { DeleteBtn, PreviewBtn } from "../components/Buttons";
 
 function Books() {
   // Setting our component's initial state
@@ -50,23 +50,18 @@ function Books() {
                 <ListItem key={book._id}>
                   <Container>
                     <Row>
-                      <Col size='xs-4 sm-2'>
+                      <Col size='xs-5 sm-3'>
                         <Thumbnail
                           src={book.image || "https://placehold.it/300x300"}
                         />
+                        <br/>
                         <DeleteBtn onClick={() => deleteBook(book._id)} />
+                        <PreviewBtn href={book.link}/>
                       </Col>
-                      <Col size='xs-8 sm-9'>
+                      <Col size='xs-7 sm-8'>
                         <h3>{book.title}</h3>
                         <h3>{book.authors}</h3>
                         <p>Description: {book.description}</p>
-                        <a
-                          rel='noreferrer noopener'
-                          target='_blank'
-                          href={book.link}
-                        >
-                          Preview
-                        </a>
                       </Col>
                     </Row>
                   </Container>
